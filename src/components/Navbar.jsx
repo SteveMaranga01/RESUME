@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { HiMenu, HiX } from 'react-icons/hi';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,16 +25,36 @@ const Navbar = () => {
                      hover:opacity-75 transtion-opacity"></div>
                 </div>
 
+                {/*mobile menu button*/}
+                <button onClick={()=> setIsMenuOpen(!isMenuOpen)} className='md:hidden p-2'>
+                    {
+                        isMenuOpen ? <HiX className='size-6'/> : <HiMenu className='size-6' />
+                    }
+                </button>
+                
+
                 {/*desktop navitems*/}
 
-                <div>
+                <div className='hidden md:flex items-center gap-10'>
                     {Navlinks.map((link, index) => (
-                        <a href={link.href} key={index}
-                        className={"text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 hover:after:w-full after:bg-blue-600 after:transition-all"}
-                        >{link.label}</a>
+                            <a
+                                href={link.href}
+                                key={index}
+                                onClick={() => setActiveLink(link.href)}
+                                className={`text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 hover:after:w-full
+                                     after:bg-blue-600 after:transition-all ${activeLink === link.href ? "text-blue-600 after:w-full" : "text-gray-600 hover:text-gray-900"}`}
+                            >
+                                {link.label}
+                            </a>
                     ))}
                 </div>
+
                 {/*get in touch btn*/}
+
+                <button className='hidden md:block bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 
+                text-sm font-medium transition-all hover:shadow-lg hover:shadow-blue-100'>
+                    <a href ="#newsletter">Get in Touch</a>
+                </button>
 
             </div>
       </nav>
