@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import CompanyLogo from './components/CompanyLogo';
+import PurposeSection from './components/purposeSection';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
         <Navbar/>
         <Hero/>
         <CompanyLogo/>
+        <PurposeSection/>
 
       </div>
       
