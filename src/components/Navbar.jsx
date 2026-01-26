@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
-
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeLink, setActiveLink] = useState('#home');
@@ -26,13 +25,12 @@ const Navbar = () => {
                 </div>
 
                 {/*mobile menu button*/}
-                
-                <button onClick={()=> setIsMenuOpen(!isMenuOpen)} className='md:hidden p-2'>
+                                <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='md:hidden p-2'>
                     {
                         isMenuOpen ? <HiX className='size-6'/> : <HiMenu className='size-6' />
                     }
                 </button>
-                
+
 
                 {/*desktop navitems*/}
 

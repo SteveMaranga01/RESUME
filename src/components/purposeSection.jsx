@@ -26,10 +26,17 @@ const PurposeSection = () => {
                 </div>
 
                 {/*bullet points */}
-                <div>
-                    {
-                        features.map((feature, index) => (
-                    }
+
+                <div className='col-span-2 grid grid-col-1 md:grid-cols-2 justify-between gap-8 '>
+                    {features.map((feature, index) => (
+                      <div key={index} className="flex items-start mb-4">
+                        <span className="text-2xl mr-3">{feature.icon}</span>
+                        <div>
+                          <h3 className="font-semibold text-lg text-gray-800">{feature.title}</h3>
+                          <p className="text-gray-600 text-sm">{feature.description}</p>
+                        </div>
+                      </div>
+                    ))}
                 </div>
 
 
