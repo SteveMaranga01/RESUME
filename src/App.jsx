@@ -5,7 +5,11 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import CompanyLogo from './components/CompanyLogo';
 import PurposeSection from './components/purposeSection';
-
+import FeaturesSection from './components/FeaturesSection';
+import ScheduleSection from './components/ScheduleSection';
+import MonitorSection from './components/MonitorSection';
+import PricingSection from './components/PricingSection';
+import ServicesSection from './components/ServicesSection';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -17,6 +21,11 @@ function App() {
         <Hero/>
         <CompanyLogo/>
         <PurposeSection/>
+        <FeaturesSection/>
+        <ScheduleSection/>
+        <MonitorSection />
+        <PricingSection/>
+        <ServicesSection/>
 
       </div>
       
