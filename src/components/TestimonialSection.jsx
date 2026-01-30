@@ -90,9 +90,28 @@ const TestimonialSection = () => {
                 },
                 }}
                 modules={[Navigation]}
-                className="testimonial-swiper md:mb-12"
+                className="testimonials-swiper md:mb-12"
             >
-                <SwiperSlide>Slide 1</SwiperSlide>
+            {
+              testimonials.map((testimonial, index) => (
+                <SwiperSlide key={index} className='h-full md:py-12 py-4'>
+                  <div className='text-center bg-white p-4 rounded-lg shadow-md h-full flex flex-col'>
+                    <div className='w-24 h-24 mx-auto mb-4'>
+                      <img src={testimonial.image} alt="" className='w-full h-full object-cover rounded-full'/>
+                    </div>
+
+                    <div className='flex justify-center mb-2'>
+                      {[...Array(5)].map((_, starIndex) => (
+                        <span key={starIndex} className='text-yellow-400'>★</span>
+                      ))}
+                    </div>
+                    <h3 className='text-xl font-semibold mb-3'>{testimonial.name}</h3>
+                    <p className='text-gray-600'>{testimonial.text}</p>
+                  </div>
+                </SwiperSlide>
+              ))
+            }
+                
                 
             </Swiper>
 
@@ -101,11 +120,11 @@ const TestimonialSection = () => {
 
             {/*navigation button */}
             <div className='flex justify-center gap-4 mt-8'>
-                <button className='w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-200 cursor-pointer'>
+                <button className='swiper-button-prev-custom w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-200 cursor-pointer'>
                     <BsChevronLeft className='size-6'/>
                 </button>
 
-                <button className='w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-200 cursor-pointer'>
+                <button className='swiper-button-next-custom w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-200 cursor-pointer'>
                     <BsChevronRight className='size-6'/>
                 </button>
             </div>
