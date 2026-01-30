@@ -9,3 +9,29 @@
         transform: translateX(-50%);
     }
 }
+.testimonials-swiper{
+    padding: 20px;
+}
+
+.testimonials-swiper .swiper-slide{
+    height:auto;
+}
+
+/* hide swiper buttons navigations */
+
+
+.testimonials-swiper .swiper-button-next::after,
+.testimonials-swiper .swiper-button-prev::after{
+    display:none;
+}
+
+.swiper-slide-next,
+.swiper-slide-prev{
+    display: none;
+}
+
+.swiper-button-next-custom.swiper-button-disabled,
+.swiper-button-prev-custom.swiper-button-disabled{
+    opacity: 0.25;
+    
+}
